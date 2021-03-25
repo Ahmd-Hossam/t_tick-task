@@ -1,0 +1,64 @@
+
+
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <button class="btn-danger" (click)='delate()'> delate All  </button> &nbsp;
+        <button class="btn-primary"> show </button>
+      </div>
+
+      <div class="col text-center">
+        <div class="row center">
+          <div class="col">
+              <p> Width : {{width}} </p>
+              <p> Height : {{height}} </p>
+          </div>
+          <div class="col">
+            <p> X : {{pageX}} </p>
+            <p> Y : {{pageY}} </p>
+          </div>
+        </div> 
+      </div>
+
+
+      <div class="col text-right">
+        <button class="btn-danger" (click)="AddBar()"> Add Bar </button> &nbsp;
+        <button class="btn-primary" (click)='AddText()'> Add Text   </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<section class="content container">
+    <div class="row">
+        <div class="col-4" *ngFor='let n of textArry(); index as i '>
+          <div class="item my_img" (resized)="onResized($event)"  #input   >
+            <input type="text" value="{{i}}" (mousedown)='mousedown(input, $event)'> 
+          </div>
+        </div>
+      
+        <div class="col-4" *ngFor='let n of BarArray(); index as i '>
+          <div class="item my_img cont_Bar" (resized)="onResized($event)"  #input   >
+            <ngx-qrcode 
+              [elementType]="elementType" [width]="180" class="bar" [value]="value"  (mousedown)='mousedown(input, $event)'>
+            </ngx-qrcode>
+          </div>
+       
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
