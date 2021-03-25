@@ -60,10 +60,7 @@ export class HomeComponent implements OnInit {
     }
 
     //delate All
-    delate(){
-      this.Bar_number=0;
-      this.Text_number=0
-    }
+   
 
   //resize element 
   onResized(event: ResizedEvent) {
@@ -73,6 +70,22 @@ export class HomeComponent implements OnInit {
     console.log('height', this.height)
   }
 
+
+  //increment Bar
+  incre_Bar(){
+    this.Bar_number -=1
+  }
+
+  //increment Text
+   incre_text(){
+    this.Text_number -=1
+  }
+
+ delate(){
+    this.Bar_number=0;
+    this.Text_number=0;
+    console.log('working');
+  }
   
 
  
@@ -83,7 +96,7 @@ export class HomeComponent implements OnInit {
 //when catch element 
 mousedown(ball:any, e:any){
     console.log('down');
-  
+    
     let shiftX = e.clientX - ball.getBoundingClientRect().left;
     let shiftY = e.clientY - ball.getBoundingClientRect().top;
 
@@ -125,7 +138,10 @@ mousedown(ball:any, e:any){
 
       ball.ondragstart = function() {
         return false;
+        
       };
+      
   }
+
 
 }

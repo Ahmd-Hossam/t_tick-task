@@ -21,6 +21,9 @@ header{
     overflow: auto;
     position: relative;
     cursor: pointer;
+    @media(max-width:767px){
+      width: 340px;
+ }
     input{
       cursor: pointer;
       position: absolute;
@@ -35,9 +38,27 @@ header{
  .cont_Bar{
    width: 190px;
    padding: 0;
+   @media(max-width:767px){
+       width: 100%;
+  }
+ }
+
+ .increment{
+   border:1px solid #00f;
+   width: 25px;
+   color:#00f;
+   font-weight: bold;
+   font-size: 16px;
  }
 
  
 
   
   
+
+ .one_col,.three_col{
+   @media(max-width:991px){
+     text-align: center !important;
+     margin: 20px auto;
+   }
+ }
